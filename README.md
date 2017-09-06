@@ -1,1 +1,2 @@
-# openrefine_files
+# OpenRefine Files
+This excel file is used for the exercises on learning OpenRefine
