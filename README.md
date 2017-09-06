@@ -1,2 +1,2 @@
 # OpenRefine Files
-This excel file is used for the exercises on learning OpenRefine
+This CSV file is used for the exercises on learning OpenRefine
