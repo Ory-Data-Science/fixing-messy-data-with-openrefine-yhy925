@@ -1,0 +1,138 @@
+[
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column yr using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "yr",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column scientificName using expression value.trim()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "selectNumeric": true,
+          "expression": "value",
+          "selectBlank": true,
+          "selectNonNumeric": true,
+          "selectError": true,
+          "name": "yr",
+          "from": 1980,
+          "to": 1989,
+          "type": "range",
+          "columnName": "yr"
+        }
+      ]
+    },
+    "columnName": "scientificName",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column scientificName by separator",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "selectNumeric": true,
+          "expression": "value",
+          "selectBlank": true,
+          "selectNonNumeric": true,
+          "selectError": true,
+          "name": "yr",
+          "from": 1980,
+          "to": 1989,
+          "type": "range",
+          "columnName": "yr"
+        }
+      ]
+    },
+    "columnName": "scientificName",
+    "guessCellType": true,
+    "removeOriginalColumn": false,
+    "mode": "separator",
+    "separator": " ",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column scientificName 1 to Genus",
+    "oldColumnName": "scientificName 1",
+    "newColumnName": "Genus"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column scientificName 2 to name_species",
+    "oldColumnName": "scientificName 2",
+    "newColumnName": "name_species"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column Genus to name_genus",
+    "oldColumnName": "Genus",
+    "newColumnName": "name_genus"
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column period using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "period",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column stake using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "stake",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column recordID using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "recordID",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column plot using expression value.toNumber()",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": []
+    },
+    "columnName": "plot",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
